@@ -10,12 +10,18 @@ var planWork = {
         const schedule = plant3.schedule;
         const number = plant3.number;
         const lastNumber = plant3.lastNumber;
-        const plan = schedule.filter(plan => plan.status == 1);
+        // const plan = schedule.filter(plan => plan.status == 1);
         
         
-        //
-        if((storage.store.getUsedCapacity(scheduing) - plant3.lastNumber) <= number){
-            
+        // 生产的东西小于预设的值
+        if((storage.store.getUsedCapacity(scheduing) - plant3.lastNumber) < number){
+            return 0;
+        }else{
+            // 去开启新的任务
+            const plans = schedule.filter(plan => plan.status == 0);
+            if(plans.leangth>0){
+
+            }
         }
         
         
